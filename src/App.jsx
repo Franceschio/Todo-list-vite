@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import { Context } from "./store";
 import { initialState } from "./store/state";
 import { mainReducer } from "./store/reducers";
-import Hero from "./components/hero";
+import Hero from "./components/Hero";
 import TasksList from "./components/tasksList";
 import NewTodoModal from "./components/newTodoModal/NewTodoModal";
 import styles from "./App.module.scss";
