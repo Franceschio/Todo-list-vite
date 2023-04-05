@@ -11,8 +11,8 @@
 
   .selectOption {
     position: absolute;
-    top: -90px;
-    left: 0.1px;
+    top: -70px;
+    transform: translateX(25px);
     background-color: darkmagenta;
     border-radius: 8px;
     color: white;
@@ -102,7 +102,7 @@
 
   .activeSelectOption {
     @include flex-box($direction: column);
-    animation: appear 0.3s ease-in 0s;
+    animation: appear 0.4s ease 0s;
   }
 }
 
@@ -147,6 +147,7 @@
     width: 10px;
     border-radius: 100%;
     top: 0;
+    transform: translateX(-25px);
   }
 
   to {
