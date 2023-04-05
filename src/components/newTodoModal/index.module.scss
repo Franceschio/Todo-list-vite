@@ -32,6 +32,7 @@
 
     form {
       @include flex-box($direction: column, $gap: 12px);
+
       .newTodoText {
         padding: 6px;
         border-radius: 6px;
