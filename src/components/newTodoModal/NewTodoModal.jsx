@@ -35,6 +35,9 @@ const NewTodoModal = () => {
     >
       <div className={styles.overflow} onClick={closeModal}></div>
       <div className={styles.addTodo}>
+        <p className={styles.quitModal} onClick={closeModal}>
+          X
+        </p>
         <h1>Add a new task!</h1>
         <form onSubmit={createNewTask}>
           <input
@@ -44,7 +47,7 @@ const NewTodoModal = () => {
             // onChange={onHandleInput}
             required
           />
-          <input className={styles.newTodoBtn} type="submit" value="submit" />
+          <input className={styles.newTodoBtn} type="submit" value="add" />
         </form>
       </div>
     </div>

@@ -9,23 +9,4 @@
     color: rgb(184, 39, 194);
     font-weight: 400;
   }
-
-  .texts {
-    display: flex;
-    justify-content: space-between;
-
-    & div:nth-child(2) {
-      text-align: right;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-
-      span {
-        font-size: 0.8rem;
-        color: rgb(123, 105, 123);
-      }
-    }
-  }
 }

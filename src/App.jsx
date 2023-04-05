@@ -7,6 +7,7 @@ import TasksList from "./components/tasksList";
 import NewTodoModal from "./components/newTodoModal/NewTodoModal";
 import styles from "./App.module.scss";
 import { todos } from "./Mock/mock";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [state, dispatch] = useReducer(mainReducer, initialState);
@@ -21,6 +22,7 @@ function App() {
     <div className={styles.App}>
       <Context.Provider value={{ state, dispatch }}>
         <Hero />
+        <Navbar />
         <TasksList />
         <NewTodoModal />
         <button className={styles.addTodo} onClick={activateModal}>

@@ -1,11 +1,11 @@
 @import "./../../styles/mixins";
 
 .Task {
-  @include flex-box($justify: space-between, $gap: 12px);
+  @include flex-box($justify: space-between, $gap: 14px);
   padding: 20px;
   border-radius: 42px;
   color: rgb(45, 7, 48);
-  min-height: 100px;
+  min-height: 105px;
   width: 100%;
   position: relative;
 

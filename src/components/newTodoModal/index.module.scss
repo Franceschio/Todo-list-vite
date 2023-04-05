@@ -29,6 +29,16 @@
     @include flex-box($direction: column, $gap: 10px);
     z-index: 4;
     color: rgb(184, 39, 194);
+    position: relative;
+
+    .quitModal {
+      position: absolute;
+      right: 15px;
+      top: 5px;
+      font-weight: 700;
+      font-size: 23px;
+      cursor: pointer;
+    }
 
     form {
       @include flex-box($direction: column, $gap: 12px);
