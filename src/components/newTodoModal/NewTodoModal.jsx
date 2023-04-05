@@ -23,6 +23,7 @@ const NewTodoModal = () => {
       },
     });
     closeModal();
+    setInputValue("");
   };
 
   return (
