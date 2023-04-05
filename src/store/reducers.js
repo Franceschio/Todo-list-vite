@@ -31,5 +31,13 @@ export const mainReducer = (state, action) => {
           return task;
         }),
       };
+
+    case "DELETE_TASK":
+      return {
+        ...state,
+        tasksListData: state.tasksListData.filter(
+          (task) => task.id !== action.payload
+        ),
+      };
   }
 };

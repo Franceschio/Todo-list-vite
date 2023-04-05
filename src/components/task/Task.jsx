@@ -23,6 +23,13 @@ const Task = ({ taskData }) => {
     });
   };
 
+  const deleteTask = () => {
+    dispatch({
+      type: "DELETE_TASK",
+      payload: taskData.id,
+    });
+  };
+
   return (
     <div className={styles.Task} style={{ background: `${randomHSLA()}` }}>
       <div className={styles.content}>
@@ -43,7 +50,9 @@ const Task = ({ taskData }) => {
           >
             uncompleted
           </div>
-          <div className={styles.deleteOption}>delete</div>
+          <div className={styles.deleteOption} onClick={deleteTask}>
+            delete
+          </div>
         </div>
         {taskData.completed ? (
           <button className={styles.completed} onClick={activeSelect}>
