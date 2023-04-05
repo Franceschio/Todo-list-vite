@@ -3,9 +3,9 @@ import styles from "./index.module.scss";
 import { Context } from "../../store";
 
 const NewTodoModal = () => {
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
 
-  const onHandleInput = (e) => setInputValue(() => e.target.value);
+  // const onHandleInput = (e) => setInputValue(() => e.target.value);
 
   const { state, dispatch } = useContext(Context);
 
@@ -17,13 +17,14 @@ const NewTodoModal = () => {
       type: "CREATE_NEW_TASK",
       payload: {
         id: state.nTasks + 1,
-        todo: inputValue,
+        todo: e.target[0].value,
         completed: false,
         userId: state.nTasks + 1,
       },
     });
     closeModal();
-    setInputValue("");
+    e.target[0].value = "";
+    // setInputValue("");
   };
 
   return (
@@ -39,11 +40,11 @@ const NewTodoModal = () => {
           <input
             className={styles.newTodoText}
             type="text"
-            value={inputValue}
-            onChange={onHandleInput}
+            // value={inputValue}
+            // onChange={onHandleInput}
             required
           />
-          <input className={styles.newTodoBtn} type="submit" />
+          <input className={styles.newTodoBtn} type="submit" value="submit" />
         </form>
       </div>
     </div>

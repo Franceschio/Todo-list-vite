@@ -1,18 +1,20 @@
+@import "./../../styles/mixins";
+
 .Task {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 16px;
+  @include flex-box($justify: space-between, $gap: 12px);
+  padding: 20px;
   border-radius: 42px;
   color: rgb(45, 7, 48);
+  min-height: 100px;
+  width: 100%;
 
   .info {
-    display: flex;
-    justify-content: space-between;
+    @include flex-box($justify: flex-end);
 
     img,
     button {
       width: 50px;
+      height: 50px;
       border-radius: 100%;
       background-color: rgb(105, 45, 112);
     }
@@ -37,12 +39,36 @@
   }
 
   .content {
-    span {
-      font-size: 0.9rem;
-    }
+    // span {
+    //   font-size: 0.9rem;
+    // }
 
     p {
-      font-size: 1.8rem;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .Task {
+    width: 75%;
+    transition: 0.8s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .info {
+      button {
+        &:hover {
+          filter: brightness(1.7);
+        }
+      }
+    }
+    .content {
+      p {
+        font-size: 27px;
+      }
     }
   }
 }

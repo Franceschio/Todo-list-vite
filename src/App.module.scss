@@ -14,7 +14,22 @@
     border-radius: 100%;
     border: 0;
     color: white;
-    font-size: 1.8rem;
+    font-size: 28px;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .App {
+    padding-bottom: 30px;
+
+    .addTodo {
+      position: fixed;
+      left: 2%;
+      bottom: 35%;
+      height: 50px;
+      width: 50px;
+      font-size: 24px;
+    }
   }
 }

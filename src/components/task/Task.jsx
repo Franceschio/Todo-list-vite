@@ -6,23 +6,17 @@ import styles from "./index.module.scss";
 const Task = ({ taskData }) => {
   const [userData, setUserData] = useState({});
 
-  useEffect(() => {
-    GET(`users/${taskData.userId}`).then((data) => setUserData(data));
-  }, []);
-
   return (
     <div className={styles.Task} style={{ background: `${randomHSLA()}` }}>
+      <div className={styles.content}>
+        <p>{taskData.todo}</p>
+      </div>
       <div className={styles.info}>
-        <img src={userData.image} alt={userData.username} />
         {taskData.completed ? (
           <button className={styles.completed}>V</button>
         ) : (
           <button className={styles.uncompleted}>X</button>
         )}
-      </div>
-      <div className={styles.content}>
-        <span>{userData.username}</span>
-        <p>{taskData.todo}</p>
       </div>
     </div>
   );

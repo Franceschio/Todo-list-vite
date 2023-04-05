@@ -1,5 +1,5 @@
+@import "../../styles/mixins";
+
 .TasksList {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  @include flex-box($direction: column, $gap: 35px);
 }
