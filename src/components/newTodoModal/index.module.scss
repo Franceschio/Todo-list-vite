@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 4;
   transform: translateY(100%);
   @include flex-box;
   transition: 0.2s;
@@ -17,7 +17,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
     background-color: rgba($color: #000000, $alpha: 0);
   }
 
@@ -27,7 +27,7 @@
     border-radius: 30px;
     background-color: white;
     @include flex-box($direction: column, $gap: 10px);
-    z-index: 4;
+    z-index: 6;
     color: rgb(184, 39, 194);
     position: relative;
 
