@@ -3,10 +3,6 @@ import styles from "./index.module.scss";
 import { Context } from "../../store";
 
 const NewTodoModal = () => {
-  // const [inputValue, setInputValue] = useState("");
-
-  // const onHandleInput = (e) => setInputValue(() => e.target.value);
-
   const { state, dispatch } = useContext(Context);
 
   const closeModal = () => dispatch({ type: "SET_MODAL" });
@@ -24,7 +20,6 @@ const NewTodoModal = () => {
     });
     closeModal();
     e.target[0].value = "";
-    // setInputValue("");
   };
 
   return (
@@ -40,13 +35,7 @@ const NewTodoModal = () => {
         </p>
         <h1>Add a new task!</h1>
         <form onSubmit={createNewTask}>
-          <input
-            className={styles.newTodoText}
-            type="text"
-            // value={inputValue}
-            // onChange={onHandleInput}
-            required
-          />
+          <input className={styles.newTodoText} type="text" required />
           <input className={styles.newTodoBtn} type="submit" value="add" />
         </form>
       </div>
