@@ -12,7 +12,12 @@ const Navbar = () => {
         <span>{new Date().toLocaleDateString()}</span>
       </div>
       <div>
-        <p>{calcPercCompletedTasks(state.tasksListData)}% Done</p>
+        <p>
+          {state.tasksListData.length > 0
+            ? calcPercCompletedTasks(state.tasksListData)
+            : "100"}
+          % Done
+        </p>
         <span>Completed Tasks</span>
       </div>
     </div>

@@ -10,9 +10,13 @@ const TasksList = () => {
 
   return (
     <div className={styles.TasksList}>
-      {state.tasksListData.map((task) => (
-        <Task taskData={task} key={task.id} />
-      ))}
+      {state.tasksListData.length > 0 ? (
+        state.tasksListData.map((task) => (
+          <Task taskData={task} key={task.id} />
+        ))
+      ) : (
+        <h2>You don't have any task.</h2>
+      )}
     </div>
   );
 };

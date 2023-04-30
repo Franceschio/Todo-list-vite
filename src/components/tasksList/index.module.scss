@@ -3,4 +3,11 @@
 .TasksList {
   @include flex-box($direction: column, $gap: 35px);
   padding-top: 20px;
+  text-align: center;
+
+  h2 {
+    color: rgb(160, 33, 169);
+    font-weight: 100;
+    transform: translateY(50px);
+  }
 }
