@@ -18,6 +18,12 @@ const NewTodoModal = () => {
         userId: state.nTasks + 1,
       },
     });
+    localStorage.setItem("todos", JSON.stringify([...state.tasksListData, {
+      id: state.nTasks + 1,
+      todo: e.target[0].value,
+      completed: false,
+      userId: state.nTasks + 1,
+    }]))
     closeModal();
     e.target[0].value = "";
   };

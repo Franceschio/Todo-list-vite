@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Context } from "./store";
 import { initialState } from "./store/state";
 import { mainReducer } from "./store/reducers";
@@ -6,15 +6,22 @@ import Hero from "./components/Hero";
 import TasksList from "./components/tasksList";
 import NewTodoModal from "./components/newTodoModal/NewTodoModal";
 import styles from "./App.module.scss";
-import { todos } from "./Mock/mock";
+// import { todos } from "./Mock/mock";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
   const [state, dispatch] = useReducer(mainReducer, initialState);
 
   const activateModal = () => dispatch({ type: "SET_MODAL" });
 
   useEffect(() => {
+    setTodos(() =>
+      localStorage.getItem("todos")
+        ? JSON.parse(localStorage.getItem("todos"))
+        : null
+    );
     dispatch({ type: "SET_TASKS_LIST", payload: todos });
   }, []);
 
