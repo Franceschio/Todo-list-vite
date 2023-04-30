@@ -10,18 +10,17 @@ import styles from "./App.module.scss";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    localStorage.getItem("todos")
+      ? JSON.parse(localStorage.getItem("todos"))
+      : null
+  );
 
   const [state, dispatch] = useReducer(mainReducer, initialState);
 
   const activateModal = () => dispatch({ type: "SET_MODAL" });
 
   useEffect(() => {
-    setTodos(() =>
-      localStorage.getItem("todos")
-        ? JSON.parse(localStorage.getItem("todos"))
-        : null
-    );
     dispatch({ type: "SET_TASKS_LIST", payload: todos });
   }, []);
 

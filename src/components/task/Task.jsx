@@ -21,6 +21,19 @@ const Task = ({ taskData }) => {
         userId: taskData.userId,
       },
     });
+    localStorage.setItem(
+      "todos",
+      JSON.stringify([
+        ...state.tasksListData.map((task) => {
+          if (task.id === taskData.id)
+            return {
+              ...task,
+              completed: !taskData.completed,
+            };
+          return task;
+        }),
+      ])
+    );
   };
 
   const deleteTask = () => {
@@ -28,6 +41,12 @@ const Task = ({ taskData }) => {
       type: "DELETE_TASK",
       payload: taskData.id,
     });
+    localStorage.setItem(
+      "todos",
+      JSON.stringify([
+        ...state.tasksListData.filter((task) => task.id !== taskData.id),
+      ])
+    );
   };
 
   return (
