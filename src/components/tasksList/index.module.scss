@@ -9,5 +9,7 @@
     color: rgb(160, 33, 169);
     font-weight: 100;
     transform: translateY(50px);
+    pointer-events: none;
+    user-select: none;
   }
 }
