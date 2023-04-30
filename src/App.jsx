@@ -6,14 +6,13 @@ import Hero from "./components/Hero";
 import TasksList from "./components/tasksList";
 import NewTodoModal from "./components/newTodoModal/NewTodoModal";
 import styles from "./App.module.scss";
-// import { todos } from "./Mock/mock";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [todos, setTodos] = useState(
     localStorage.getItem("todos")
       ? JSON.parse(localStorage.getItem("todos"))
-      : null
+      : []
   );
 
   const [state, dispatch] = useReducer(mainReducer, initialState);

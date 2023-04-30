@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from "react";
-import { GET } from "../../utils/http";
+import { useState, useContext } from "react";
 import { randomHSLA } from "../../utils/funcs";
 import styles from "./index.module.scss";
 import { Context } from "../../store";
