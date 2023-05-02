@@ -49,7 +49,7 @@ const Task = ({ taskData }) => {
   };
 
   return (
-    <div className={styles.Task} style={{ background: `${randomHSLA()}` }}>
+    <div className={styles.Task}>
       <div className={styles.content}>
         <p>{taskData.todo}</p>
       </div>

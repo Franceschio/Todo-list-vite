@@ -8,6 +8,7 @@
   min-height: 105px;
   width: 100%;
   position: relative;
+  background-color: rgb(189, 116, 194);
 
   .selectOption {
     position: absolute;
@@ -25,7 +26,7 @@
       height: 50%;
       font-size: 12px;
       @include flex-box;
-      background-color: rgb(253, 37, 138);
+      background-color: rgb(143, 89, 147);
       border-top-right-radius: 8px;
       border-top-left-radius: 8px;
       cursor: pointer;
